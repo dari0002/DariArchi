@@ -1,16 +1,108 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моё портфолио</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .portfolio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .project {
+            background: white;
+            margin: 20px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+        .project img {
+            width: 300px;
+            height: auto;
+            margin-right: 15px;
+        }
+        .project-info {
+            font-size: 18px;
+        }
     </style>
+    <script>
+        function toggleMenu() {
+            alert('Menu clicked!');
+        }
+    </script>
 </head>
 <body>
-    <h1>Привет! Я [ТВОЁ ИМЯ]</h1>
-    <p>Добро пожаловать в моё портфолио!</p>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="#">LANDSCAPE</a></li>
+                <li><a href="#">ENGINEERING</a></li>
+                <li><a href="#">ARCHITECTURE</a></li>
+                <li><a href="#">PLANNING</a></li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">SUSTAINABILITY</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="portfolio">
+            <div class="project">
+                <img src="images/project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Sankt Lukas Hospice and Lukashuset</h3>
+                    <p>HELLERUP, DENMARK</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Opera and Ballet Theatre of Kosovo</h3>
+                    <p>PRISHTINA, KOSOVO</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/project3.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h3>Suzhou Museum of Contemporary Art</h3>
+                    <p>SUZHOU, CHINA</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
