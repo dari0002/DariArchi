@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #1a1a1a;
-    --text-color: #ffffff;
-    --accent-color: #3498db;
+    --primary-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #333333;
     --transition: 0.3s ease;
     --spacing: 20px;
 }
@@ -11,7 +11,7 @@ body {
     padding: 0;
     background: var(--primary-color);
     color: var(--text-color);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
 }
@@ -20,13 +20,14 @@ header {
     position: fixed;
     width: 100%;
     padding: var(--spacing);
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -35,16 +36,17 @@ nav {
 
 .logo {
     order: 2;
-    font-size: 24px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: 300;
     margin: 0;
     margin-right: 40px;
     text-align: right;
+    letter-spacing: 2px;
 }
 
 nav ul {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -53,42 +55,44 @@ nav ul {
 nav a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 400;
 }
 
 .filter-container {
-    padding: 100px 0 var(--spacing);
+    padding: 120px 0 var(--spacing);
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
     max-width: 1400px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .filter-btn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: none;
     color: var(--text-color);
     padding: 8px 20px;
     cursor: pointer;
     transition: var(--transition);
-    font-size: 14px;
-    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.6;
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
+    opacity: 1;
+    background: transparent;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: var(--spacing);
     padding: 0 var(--spacing);
     max-width: 1400px;
@@ -98,7 +102,7 @@ nav a {
 .project-card {
     position: relative;
     width: 100%;
-    padding-bottom: 100%; /* Создает идеальный квадрат */
+    padding-bottom: 100%;
     overflow: hidden;
     cursor: pointer;
 }
@@ -119,7 +123,7 @@ nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.95);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,22 +139,23 @@ nav a {
     transform: translateY(20px);
     transition: transform var(--transition);
     text-align: center;
-    width: 100%;
-    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
 }
 
 .project-overlay p {
     margin: 0;
     transform: translateY(20px);
     transition: transform var(--transition);
-    opacity: 0.8;
+    opacity: 0.6;
     text-align: center;
-    width: 100%;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 .project-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .project-card:hover .project-overlay {
@@ -162,25 +167,22 @@ nav a {
     transform: translateY(0);
 }
 
-/* Адаптивность */
 @media (max-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
     }
     
-    .project-card {
-        padding-bottom: 100%; /* Сохраняем квадратную форму */
+    nav ul {
+        gap: 20px;
+    }
+    
+    .logo {
+        margin-right: 20px;
     }
 }
