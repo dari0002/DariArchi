@@ -3,49 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>DARIA DARI</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul>
-                <li><a href="#">LANDSCAPE</a></li>
-                <li><a href="#">ENGINEERING</a></li>
-                <li><a href="#">ARCHITECTURE</a></li>
-                <li><a href="#">PLANNING</a></li>
-                <li><a href="#">PRODUCTS</a></li>
-                <li><a href="#">SUSTAINABILITY</a></li>
+                <li><a href="#">WORK</a></li>
+                <li><a href="#">CONTACT</a></li>
             </ul>
         </nav>
+        <h1 class="logo">DARIA DARI</h1>
     </header>
-    
+
     <main>
-        <section class="portfolio">
-            <div class="project">
-                <img src="images/project1.jpg" alt="Project 1">
-                <div class="project-info">
-                    <h3>Sankt Lukas Hospice and Lukashuset</h3>
-                    <p>HELLERUP, DENMARK</p>
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="ui">UI/UX</button>
+            <button class="filter-btn" data-category="web">Web</button>
+            <button class="filter-btn" data-category="mobile">Mobile</button>
+            <button class="filter-btn" data-category="brand">Brand</button>
+        </div>
+
+        <div class="projects-grid">
+            <article class="project-card" data-category="ui">
+                <img src="./images/project1.jpg" alt="UI Project">
+                <div class="project-overlay">
+                    <h3>UI/UX Design</h3>
+                    <p>Mobile App Interface</p>
                 </div>
-            </div>
-            <div class="project">
-                <img src="images/project2.jpg" alt="Project 2">
-                <div class="project-info">
-                    <h3>Opera and Ballet Theatre of Kosovo</h3>
-                    <p>PRISHTINA, KOSOVO</p>
+            </article>
+
+            <article class="project-card" data-category="web">
+                <img src="./images/project2.jpg" alt="Web Project">
+                <div class="project-overlay">
+                    <h3>Web Development</h3>
+                    <p>E-commerce Platform</p>
                 </div>
-            </div>
-            <div class="project">
-                <img src="images/project3.jpg" alt="Project 3">
-                <div class="project-info">
-                    <h3>Suzhou Museum of Contemporary Art</h3>
-                    <p>SUZHOU, CHINA</p>
+            </article>
+
+            <article class="project-card" data-category="mobile">
+                <img src="./images/project3.jpg" alt="Mobile Project">
+                <div class="project-overlay">
+                    <h3>Mobile App</h3>
+                    <p>Fitness Tracker</p>
                 </div>
-            </div>
-        </section>
+            </article>
+
+            <article class="project-card" data-category="brand">
+                <img src="./images/project4.jpg" alt="Brand Project">
+                <div class="project-overlay">
+                    <h3>Brand Identity</h3>
+                    <p>Restaurant Chain</p>
+                </div>
+            </article>
+
+            <!-- Добавьте больше проектов по необходимости -->
+        </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

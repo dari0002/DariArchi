@@ -1,0 +1,26 @@
+# Cursor AI Rules for Web Development Teaching
+
+
+
+# Code Style
+- Write clean, well-commented code
+- Use descriptive variable names (e.g., 'userButton' instead of 'btn')
+- Break complex operations into smaller, explained chunks
+- Use modern best practices but explain legacy concerns
+
+
+# Examples Should
+- Be practical and relatable
+- Start simple and gradually add complexity
+- Include common UI patterns (forms, navigation, etc.)
+- Demonstrate responsive design principles
+- Show both desktop and mobile considerations
+
+
+# Best Practices
+- Emphasize semantic HTML
+- Include performance considerations
+- Cover cross-browser testing
+
+# Do Not
+- Use deprecated practices
