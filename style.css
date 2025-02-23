@@ -174,24 +174,20 @@ nav a {
     background: transparent;
 }
 
-/* Обновляем стили сетки проектов */
+/* Стили для сетки проектов */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 3px;
     padding: 3px;
-    margin-top: 160px;
-    box-sizing: border-box;
-    width: calc(100% - 6px); /* Учитываем отступы по краям */
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 120px;
+    width: 100%;
 }
 
 .project-item {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: calc((100vw - 18px) / 5); /* Вычисляем высоту с учетом отступов */
+    padding-bottom: 100%; /* Создает квадратную форму */
     overflow: hidden;
 }
 
@@ -203,15 +199,14 @@ nav a {
     height: 100%;
 }
 
-.project-link img {
+.project-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover img {
-    transform: scale(1.05);
+    object-fit: cover; /* Сохраняет пропорции изображения */
+    object-position: center; /* Центрирует изображение */
 }
 
 .project-info {
@@ -290,17 +285,11 @@ nav a {
     .project-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    .project-item {
-        padding-bottom: calc((100vw - 15px) / 4);
-    }
 }
 
 @media (max-width: 992px) {
     .project-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .project-item {
-        padding-bottom: calc((100vw - 12px) / 3);
+        grid-template-columns: repeat(3, 1fr); /* Три колонки на планшетах и мобильных */
     }
 }
 
@@ -308,43 +297,11 @@ nav a {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .project-item {
-        padding-bottom: calc((100vw - 9px) / 2);
-    }
-    
-    nav ul {
-        gap: 20px;
-    }
-    
-    .logo {
-        margin-right: 20px;
-    }
-    
-    .view-options {
-        display: none;
-    }
-    
-    .language-switcher {
-        position: absolute;
-        top: 100%;
-        right: 20px;
-        background: white;
-        padding: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        display: none;
-    }
-    
-    .language-switcher.show {
-        display: flex;
-    }
 }
 
 @media (max-width: 480px) {
     .project-grid {
         grid-template-columns: repeat(1, 1fr);
-    }
-    .project-item {
-        padding-bottom: calc(100vw - 6px);
     }
 }
 
@@ -499,23 +456,13 @@ nav a {
     cursor: pointer;
 }
 
-/* Обновляем стили логотипа и "ABOUT ME" */
-.logo a,
-.about-link a {
+/* Обновляем стили логотипа */
+.logo a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
 }
 
-.logo a:hover,
-.about-link a:hover {
-    color: #FF9999; /* Одинаковый розовый цвет при наведении */
-}
-
-/* Базовые стили для about-link */
-.about-link a {
-    font-size: 16px;
-    padding: 5px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
+.logo a:hover {
+    color: #FF9999; /* Розовый цвет */
 }
