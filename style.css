@@ -81,15 +81,14 @@ body {
     text-decoration: none;
     color: #FF9999;
     font-size: 16px;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
     padding: 5px;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    cursor: pointer;
 }
 
 .about-link a:hover {
-    opacity: 0.7;
+    color: #FF6666; /* Чуть более темный оттенок розового при наведении */
 }
 
 /* Добавляем тонкую линию снизу */
@@ -498,4 +497,25 @@ nav a {
 .filter-btn,
 .project-item {
     cursor: pointer;
+}
+
+/* Обновляем стили логотипа и "ABOUT ME" */
+.logo a,
+.about-link a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover,
+.about-link a:hover {
+    color: #FF9999; /* Одинаковый розовый цвет при наведении */
+}
+
+/* Базовые стили для about-link */
+.about-link a {
+    font-size: 16px;
+    padding: 5px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
