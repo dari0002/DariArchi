@@ -16,32 +16,116 @@ body {
     min-height: 100vh;
 }
 
-header {
+/* Подключаем шрифт Intro для всех начертаний */
+@import url('https://fonts.cdnfonts.com/css/intro');
+
+/* Общие стили для всего сайта */
+* {
+    font-family: 'Intro', sans-serif;
+}
+
+/* Стили хедера */
+.main-header {
     position: fixed;
+    top: 0;
     width: 100%;
-    padding: var(--spacing);
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    height: 100px;
+    background: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    z-index: 1000;
     box-sizing: border-box;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Логотип по центру */
+.logo {
+    font-family: 'Intro', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Контейнер для языков */
+.language-switcher {
+    position: absolute;
+    left: 35px;
+    display: flex;
+    gap: 8px;
+}
+
+.lang-link {
+    text-decoration: none;
+    color: #999;
+    font-size: 16px;
+    text-transform: lowercase;
+    transition: color 0.3s ease;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.lang-link:hover,
+.lang-link.active {
+    color: #000;
+}
+
+/* About Me */
+.about-link {
+    position: absolute;
+    right: 35px;
+}
+
+.about-link a {
+    text-decoration: none;
+    color: #FF9999;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+    padding: 5px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.about-link a:hover {
+    opacity: 0.7;
+}
+
+/* Добавляем тонкую линию снизу */
+.main-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f5f5f5;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .language-switcher {
+        left: 20px;
+    }
+    
+    .about-link {
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    
+    .about-link {
+        right: 20px;
+    }
 }
 
 nav {
     order: 1;
-}
-
-.logo {
-    order: 2;
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-    margin-right: 40px;
-    text-align: right;
-    letter-spacing: 2px;
 }
 
 nav ul {
@@ -72,7 +156,7 @@ nav a {
 }
 
 .filter-btn {
-    background: transparent;
+    background: none;
     border: none;
     color: var(--text-color);
     padding: 8px 20px;
@@ -82,6 +166,7 @@ nav a {
     letter-spacing: 1px;
     text-transform: uppercase;
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .filter-btn.active,
@@ -90,31 +175,65 @@ nav a {
     background: transparent;
 }
 
-.projects-grid {
+/* Обновляем стили сетки проектов */
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: var(--spacing);
-    padding: 0 var(--spacing);
-    max-width: 1400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    padding: 3px;
+    margin-top: 160px;
+    box-sizing: border-box;
+    width: calc(100% - 6px); /* Учитываем отступы по краям */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.project-card {
+.project-item {
     position: relative;
     width: 100%;
-    padding-bottom: 100%;
+    height: 0;
+    padding-bottom: calc((100vw - 18px) / 5); /* Вычисляем высоту с учетом отступов */
     overflow: hidden;
-    cursor: pointer;
 }
 
-.project-card img {
+.project-link {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.project-link img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform var(--transition);
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-info {
+    transform: translateY(0);
+}
+
+.project-info span {
+    display: block;
+    font-size: 16px;
+    color: #000;
 }
 
 .project-overlay {
@@ -167,15 +286,31 @@ nav a {
     transform: translateY(0);
 }
 
+/* Медиа-запросы для адаптивности */
 @media (max-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .project-item {
+        padding-bottom: calc((100vw - 15px) / 4);
+    }
+}
+
+@media (max-width: 992px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .project-item {
+        padding-bottom: calc((100vw - 12px) / 3);
     }
 }
 
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-item {
+        padding-bottom: calc((100vw - 9px) / 2);
     }
     
     nav ul {
@@ -185,4 +320,182 @@ nav a {
     .logo {
         margin-right: 20px;
     }
+    
+    .view-options {
+        display: none;
+    }
+    
+    .language-switcher {
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        display: none;
+    }
+    
+    .language-switcher.show {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .project-item {
+        padding-bottom: calc(100vw - 6px);
+    }
+}
+
+/* Добавляем стили для языкового переключателя */
+.language-switcher {
+    display: flex;
+    gap: 5px;
+    margin-left: 30px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    color: #000;
+}
+
+.lang-btn.active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Добавляем стили для текста на изображениях */
+.project-item {
+    position: relative;
+}
+
+.project-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.project-location {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Обновленные стили навигации */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+.language-switcher {
+    display: flex;
+    gap: 5px;
+}
+
+.search-filter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.lang-btn.active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .main-nav {
+        padding: 15px;
+    }
+    
+    .view-options {
+        display: none;
+    }
+    
+    .search-filter {
+        font-size: 14px;
+    }
+}
+
+/* Стили для фильтров */
+.filters {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 999;
+}
+
+.filter-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: #000;
+}
+
+.filter-btn.active {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Проекты */
+.project-info span {
+    font-family: 'Intro', sans-serif;
+}
+
+/* Для кликабельных элементов оставляем стандартный pointer */
+.lang-link,
+.about-link a,
+.filter-btn,
+.project-item {
+    cursor: pointer;
 }

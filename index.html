@@ -3,62 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architecture Portfolio</title>
+    <title>DARIA STUDIO</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">PROJECTS</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
-        <h1 class="logo">YOUR NAME</h1>
+    <header class="main-header">
+        <div class="language-switcher">
+            <a href="#" class="lang-link" data-lang="cz">cz</a>
+            <a href="#" class="lang-link active" data-lang="en">en</a>
+            <a href="#" class="lang-link" data-lang="ru">ru</a>
+        </div>
+        <h1 class="logo">STUDIO DARIA</h1>
+        <div class="about-link">
+            <a href="#" data-translate="about">ABOUT ME</a>
+        </div>
     </header>
 
+    <div class="filters">
+        <div class="filter-group">
+            <button class="filter-btn active" data-filter="all" data-translate="all">All</button>
+            <button class="filter-btn" data-filter="residential" data-translate="residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial" data-translate="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="cultural" data-translate="cultural">Cultural</button>
+            <button class="filter-btn" data-filter="urban" data-translate="urban">Urban</button>
+        </div>
+    </div>
+
     <main>
-        <div class="filter-container">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="residential">Residential</button>
-            <button class="filter-btn" data-category="commercial">Commercial</button>
-            <button class="filter-btn" data-category="interior">Interior</button>
-            <button class="filter-btn" data-category="concept">Concept</button>
+        <div class="project-grid">
+            <div class="project-item" data-category="residential">
+                <a href="projects/project1.html" class="project-link">
+                    <img src="images/project1.jpg" alt="Project 1">
+                </a>
+            </div>
+            <div class="project-item" data-category="commercial">
+                <a href="projects/project2.html" class="project-link">
+                    <img src="images/project2.jpg" alt="Project 2">
+                </a>
+            </div>
+            <div class="project-item" data-category="cultural">
+                <a href="projects/project3.html" class="project-link">
+                    <img src="images/project3.jpg" alt="Project 3">
+                </a>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1470075801209-17f9ec0cada6?w=800" alt="Project 3">
+                <div class="project-info">
+                    <span data-translate="project3_title">Public Space</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?w=800" alt="Project 4">
+                <div class="project-info">
+                    <span data-translate="project4_title">Office Complex</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=800" alt="Project 5">
+                <div class="project-info">
+                    <span data-translate="project5_title">Residential Tower</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2?w=800" alt="Project 6">
+                <div class="project-info">
+                    <span data-translate="project6_title">Museum</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=800" alt="Project 7">
+                <div class="project-info">
+                    <span data-translate="project7_title">Transport Hub</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1496564203457-11bb12075d90?w=800" alt="Project 8">
+                <div class="project-info">
+                    <span data-translate="project8_title">Library</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1501446529957-6226bd447c46?w=800" alt="Project 9">
+                <div class="project-info">
+                    <span data-translate="project9_title">Shopping Mall</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1489389944381-3471b5b30f04?w=800" alt="Project 10">
+                <div class="project-info">
+                    <span data-translate="project10_title">Hotel</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=800" alt="Project 11">
+                <div class="project-info">
+                    <span data-translate="project11_title">Sports Center</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800" alt="Project 12">
+                <div class="project-info">
+                    <span data-translate="project12_title">Airport Terminal</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800" alt="Project 13">
+                <div class="project-info">
+                    <span data-translate="project13_title">School Campus</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1486744328743-c1a306f6ea66?w=800" alt="Project 14">
+                <div class="project-info">
+                    <span data-translate="project14_title">Research Center</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Project 15">
+                <div class="project-info">
+                    <span data-translate="project15_title">Business District</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?w=800" alt="Project 16">
+                <div class="project-info">
+                    <span data-translate="project16_title">Urban Park</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1459679749680-18eb1eb37418?w=800" alt="Project 17">
+                <div class="project-info">
+                    <span data-translate="project17_title">Concert Hall</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1485628390555-1a7bd503f9fe?w=800" alt="Project 18">
+                <div class="project-info">
+                    <span data-translate="project18_title">Art Gallery</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1451934403379-ffeff84932da?w=800" alt="Project 19">
+                <div class="project-info">
+                    <span data-translate="project19_title">Innovation Hub</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?w=800" alt="Project 20">
+                <div class="project-info">
+                    <span data-translate="project20_title">Tech Campus</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800" alt="Project 21">
+                <div class="project-info">
+                    <span data-translate="project21_title">Green Building</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?w=800" alt="Project 22">
+                <div class="project-info">
+                    <span data-translate="project22_title">Eco District</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Project 23">
+                <div class="project-info">
+                    <span data-translate="project23_title">Smart City</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=800" alt="Project 24">
+                <div class="project-info">
+                    <span data-translate="project24_title">Mixed Use</span>
+                </div>
+            </div>
+            <div class="project-item" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1451934403379-ffeff84932da?w=800" alt="Project 25">
+                <div class="project-info">
+                    <span data-translate="project25_title">Future Living</span>
+                </div>
+            </div>
         </div>
 
-        <div class="projects-grid">
-            <article class="project-card" data-category="residential">
-                <img src="./images/project1.jpg" alt="Modern House">
-                <div class="project-overlay">
-                    <h3>Modern Residence</h3>
-                    <p>Private House | 2023</p>
-                </div>
-            </article>
-
-            <article class="project-card" data-category="commercial">
-                <img src="./images/project2.jpg" alt="Office Building">
-                <div class="project-overlay">
-                    <h3>Business Center</h3>
-                    <p>Commercial Space | 2023</p>
-                </div>
-            </article>
-
-            <article class="project-card" data-category="interior">
-                <img src="./images/project3.jpg" alt="Interior Design">
-                <div class="project-overlay">
-                    <h3>Minimalist Interior</h3>
-                    <p>Apartment Design | 2022</p>
-                </div>
-            </article>
-
-            <article class="project-card" data-category="concept">
-                <img src="./images/project4.jpg" alt="Concept Design">
-                <div class="project-overlay">
-                    <h3>Urban Development</h3>
-                    <p>Concept Project | 2023</p>
-                </div>
-            </article>
+        <div class="load-more">
+            <button data-translate="loadMore">Load More</button>
         </div>
     </main>
 
